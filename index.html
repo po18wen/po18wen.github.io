@@ -1,11 +1,186 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>我的网站</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>阅读导航</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background: linear-gradient(145deg, #f0f9f6 0%, #e6f2ef 100%);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Roboto", "Helvetica Neue", sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .card {
+            max-width: 480px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(2px);
+            border-radius: 48px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06), 0 4px 12px rgba(0, 0, 0, 0.02);
+            padding: 32px 24px 40px;
+            text-align: center;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(28, 187, 180, 0.2);
+        }
+
+        .icon {
+            font-size: 64px;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a2c3e;
+            margin-bottom: 8px;
+            letter-spacing: -0.3px;
+        }
+
+        .sub {
+            font-size: 15px;
+            color: #5b6e8c;
+            margin-bottom: 32px;
+            border-bottom: 1px solid #e2edf2;
+            display: inline-block;
+            padding-bottom: 6px;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .entry-btn {
+            display: block;
+            background: linear-gradient(135deg, #1cbbb4, #11998e);
+            border: none;
+            border-radius: 60px;
+            padding: 16px 20px;
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            transition: transform 0.1s, box-shadow 0.2s;
+            box-shadow: 0 6px 14px rgba(28, 187, 180, 0.25);
+            cursor: pointer;
+        }
+
+        .entry-btn:active {
+            transform: scale(0.97);
+            opacity: 0.9;
+        }
+
+        .entry-btn.secondary {
+            background: linear-gradient(135deg, #f3f6fc, #eef2f9);
+            color: #1cbbb4;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #cbdde9;
+        }
+
+        .entry-btn.secondary:active {
+            background: #e8edf4;
+        }
+
+        .tips {
+            background: #f8f9fc;
+            border-radius: 28px;
+            padding: 16px 20px;
+            font-size: 13px;
+            color: #5b6e8c;
+            border-left: 4px solid #1cbbb4;
+            text-align: left;
+            margin-top: 8px;
+        }
+
+        .tips p {
+            margin-bottom: 8px;
+        }
+
+        .tips a {
+            color: #1cbbb4;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer {
+            margin-top: 24px;
+            font-size: 12px;
+            color: #8ba0b5;
+        }
+
+        /* 暗色模式跟随系统 */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: linear-gradient(145deg, #18252f, #1c2a33);
+            }
+            .card {
+                background: rgba(30, 40, 48, 0.96);
+                border-color: #2a3a44;
+            }
+            h1 {
+                color: #eef4ff;
+            }
+            .sub, .tips, .footer {
+                color: #b0c4de;
+            }
+            .entry-btn.secondary {
+                background: #25333c;
+                color: #4ed0c5;
+                border-color: #3a4a55;
+            }
+            .tips {
+                background: #1e2e38;
+                border-left-color: #4ed0c5;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello, GitHub Pages!</h1>
-    <p>网站已成功上线。</p>
+<div class="card">
+    <div class="icon">📚</div>
+    <h1>阅读入口</h1>
+    <div class="sub">请选择以下方式进入</div>
+
+    <div class="btn-group">
+        <!-- 主入口：替换成你的主小说站地址 -->
+        <a href="https://你的主小说站.com" class="entry-btn" rel="noreferrer noopener">✨ 主站入口</a>
+
+        <!-- 备用入口一：替换成第一个备用地址 -->
+        <a href="https://备用1.yourdomain.com" class="entry-btn secondary">📖 备用入口 ①</a>
+
+        <!-- 备用入口二：替换成第二个备用地址 -->
+        <a href="https://备用2.yourdomain.com" class="entry-btn secondary">📖 备用入口 ②</a>
+    </div>
+
+    <div class="tips">
+        <p>📌 如果某个入口无法访问，请尝试其他入口。</p>
+        <p>🔒 本页面仅提供导航，不含任何小说内容。</p>
+        <p>📩 获取最新地址：<a href="https://你的通知地址（如群/电报/公众号）">点击联系客服</a></p>
+    </div>
+    <div class="footer">
+        © 阅读导航 · 纯净访问
+    </div>
+</div>
+
+<script>
+    // 可选：简单埋点或检测当前页面来源（不需要可删除）
+    // 完全符合纯洁页面的要求
+    console.log("导航页面加载完成");
+</script>
 </body>
 </html>
